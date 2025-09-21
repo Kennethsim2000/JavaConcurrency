@@ -15,8 +15,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             System.out.println("Enter a number to add to the list");
-            int num = Integer.parseInt(scanner.nextLine());
-            task.addNum(num);
+            String cmd = scanner.nextLine();
+            if(cmd.equals("exit")) {
+                t1.interrupt();
+                break;
+            } else {
+                int num = Integer.parseInt(cmd);
+                task.addNum(num);
+            }
         }
     }
 }

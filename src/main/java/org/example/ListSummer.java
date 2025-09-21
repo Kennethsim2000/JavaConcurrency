@@ -23,7 +23,7 @@ public class ListSummer implements Runnable{
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 System.err.println("Terminating Summer");
-                throw new RuntimeException(e);
+                break;
             }
         }
     }
