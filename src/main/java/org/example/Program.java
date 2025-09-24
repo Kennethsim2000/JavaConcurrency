@@ -7,6 +7,8 @@ public class Program {
 
     public static void main(String[] args) {
         final StatsCounter counter = new StatsCounter();
+//        final StatsCounterLockFree counter = new StatsCounterLockFree();
+
         Thread[] threads = new Thread[threadCount_];
 
         for (int tnum = 0; tnum < threadCount_; ++tnum) {
