@@ -1,8 +1,10 @@
 package org.example;
 
 public class Program {
+
     public static final int threadCount_ = 10;
     public static final int iterationCount_ = 1000000;
+
     public static void main (String[] args)  {
         final StatsCounter c = new StatsCounter();
         Thread[] threads = new Thread[threadCount_];

@@ -2,12 +2,19 @@ package org.example;
 
 public final class StatsCounter {
     private int successCount_;
+    private static final Object lock = new Object();
 
     public int getSuccessCount() {
-        return successCount_;
+        synchronized (lock) {
+            return successCount_;
+        }
+
     }
 
     public void increaseSuccessCount(int delta) {
-        successCount_ += delta;
+        synchronized (lock) {
+            successCount_ += delta;
+        }
+
     }
 }
