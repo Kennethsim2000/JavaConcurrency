@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class PerformanceTest {
     private static final int THREADS = 4;
     private static final int ITERATIONS = 5_000_000;
@@ -20,8 +22,7 @@ public class PerformanceTest {
     }
 
     private static long runAtomicTest(boolean report) throws InterruptedException {
-        java.util.concurrent.atomic.AtomicInteger counter =
-                new java.util.concurrent.atomic.AtomicInteger(0);
+        AtomicInteger counter = new AtomicInteger(0);
 
         Thread[] threads = new Thread[THREADS];
         for (int t = 0; t < THREADS; t++) {
